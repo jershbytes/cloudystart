@@ -3,6 +3,8 @@
 # Purpose: CloudyStart a quick and easy cloudinit VM creation tool.
 # Created on 06-01-2024
 
+set -eux
+
 # Function for colors.
 print_green() {
     echo -e "\e[32m$1\e[0m"
@@ -80,13 +82,12 @@ fi
 
 # Define image URLs for different distributions
 declare -A IMAGE_URLS
-IMAGE_URLS[1]="https://dl.rockylinux.org/pub/rocky/9/images/x86_64/Rocky-9-GenericCloud.latest.x86_64.qcow2"
-IMAGE_URLS[2]="https://repo.almalinux.org/almalinux/9/cloud/x86_64/images/AlmaLinux-9-GenericCloud-latest.x86_64.qcow2"
-IMAGE_URLS[3]="https://download.fedoraproject.org/pub/fedora/linux/releases/40/Cloud/x86_64/images/Fedora-Cloud-Base-Generic.x86_64-40-1.14.qcow2"
-IMAGE_URLS[4]="https://cloud.centos.org/centos/9-stream/x86_64/images/CentOS-Stream-GenericCloud-9-latest.x86_64.qcow2"
-IMAGE_URLS[5]="https://cloud.debian.org/images/cloud/bookworm/latest/debian-12-generic-amd64.qcow2"
+IMAGE_URLS[1]="https://dl.rockylinux.org/pub/rocky/10/images/x86_64/Rocky-10-GenericCloud-Base.latest.x86_64.qcow2"
+IMAGE_URLS[2]="https://repo.almalinux.org/almalinux/10/cloud/x86_64/images/AlmaLinux-10-GenericCloud-latest.x86_64.qcow2"
+IMAGE_URLS[3]="https://cofractal-ewr.mm.fcix.net/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
+IMAGE_URLS[4]="https://cloud.centos.org/centos/10-stream/x86_64/images/CentOS-Stream-GenericCloud-10-latest.x86_64.qcow2"
+IMAGE_URLS[5]="https://cloud.debian.org/images/cloud/trixie/latest/debian-13-generic-amd64.qcow2"
 IMAGE_URLS[6]="https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img"
-IMAGE_URLS[7]="https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64-disk-kvm.img"
 
 # Function to download the image for the selected distribution
 download_distribution_image() {
@@ -96,13 +97,12 @@ download_distribution_image() {
 
 # Display distribution options
 CHOICE=$(whiptail --title "CloudyStart" --menu "Select distribution:" 16 78 10 \
-"1" "Rocky 9" \
-"2" "Alma 9" \
-"3" "Fedora 40" \
+"1" "Rocky 10" \
+"2" "Alma 10" \
+"3" "Fedora 43" \
 "4" "CentOS-Stream 9" \
-"5" "Debian 12" \
-"6" "Ubuntu 24.04" \
-"7" "Ubuntu 22.04" 3>&1 1>&2 2>&3)
+"5" "Debian 13" \
+"6" "Ubuntu 24.04" 3>&1 1>&2 2>&3)
 handle_cancel
 
 # Check if the choice is valid
@@ -115,13 +115,12 @@ fi
 DISTRIBUTION=""
 IMAGE_URL=""
 case $CHOICE in
-    1) DISTRIBUTION="rocky 9.3";;
-    2) DISTRIBUTION="alma 9.3";;
-    3) DISTRIBUTION="fedora 40";;
+    1) DISTRIBUTION="rocky 10";;
+    2) DISTRIBUTION="alma 10";;
+    3) DISTRIBUTION="fedora 43";;
     4) DISTRIBUTION="centos stream";;
-    5) DISTRIBUTION="debian 12";;
+    5) DISTRIBUTION="debian 13";;
     6) DISTRIBUTION="ubuntu 24.04";;
-    7) DISTRIBUTION="ubuntu 22.04";;
     *) whiptail --msgbox "Invalid choice" 8 39 --title "CloudyStart"; exit 1;;
 esac
 
