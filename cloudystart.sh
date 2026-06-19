@@ -87,7 +87,7 @@ IMAGE_URLS[2]="https://repo.almalinux.org/almalinux/10/cloud/x86_64/images/AlmaL
 IMAGE_URLS[3]="https://cofractal-ewr.mm.fcix.net/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2"
 IMAGE_URLS[4]="https://cloud.centos.org/centos/10-stream/x86_64/images/CentOS-Stream-GenericCloud-10-latest.x86_64.qcow2"
 IMAGE_URLS[5]="https://cloud.debian.org/images/cloud/trixie/latest/debian-13-generic-amd64.qcow2"
-IMAGE_URLS[6]="https://cloud-images.ubuntu.com/noble/current/noble-server-cloudimg-amd64.img"
+IMAGE_URLS[6]="https://cloud-images.ubuntu.com/resolute/current/resolute-server-cloudimg-amd64.img"
 
 # Function to download the image for the selected distribution
 download_distribution_image() {

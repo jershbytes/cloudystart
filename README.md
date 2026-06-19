@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  <!-- <a href="https://cloudystart.netlify.app">Demo</a> -->
+
 </div>
 
 <h1 align="center">Cloudystart</h1>
@@ -23,14 +23,6 @@
 
   <img alt="Github stars" src="https://img.shields.io/github/stars/JershBytes/cloudystart?color=56BEB8" />
 </p>
-
-<!-- Status -->
-
-<!-- <h4 align="center"> 
-	🚧  Cloudystart 🚀 Under construction...  🚧
-</h4> 
-
-<hr> -->
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
@@ -63,9 +55,9 @@ I've used Proxmox for years and when I came back last year I found out about Clo
 
 The following tools were used in this project:
 
-- [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
-- [Proxmox](https://www.proxmox.com/en/)
-- [Linux](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+- [Bash]
+- [Proxmox]
+
 
 ## :white_check_mark: Requirements ##
 
@@ -95,11 +87,15 @@ CIDR="23 # Change to your CIDR notation.
 
 ## :memo: License ##
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT. For more details, see the [LICENSE] file.
 
 
-Made with :heart: by <a href="https://github.com/JershBytes" target="_blank">JershBytes}</a>
+Made with :heart: by <a href="https://github.com/JershBytes" target="_blank">JershBytes</a>
 
 &#xa0;
 
 <a href="#top">Back to top</a>
+
+[Proxmox]: https://www.proxmox.com/
+[Bash]: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+[LICENSE]: LICENSE
